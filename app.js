@@ -123,7 +123,8 @@ function slider(e) {
     if (imageIdx >= galleryItems.length) {
       imageIdx = 0;
     }
-  } else if (e.code === "ArrowLeft") {
+  }
+  if (e.code === "ArrowLeft") {
     imageIdx -= 1;
     if (imageIdx < 0) {
       imageIdx = galleryItems.length - 1;
@@ -138,4 +139,5 @@ function clEsc(e) {
   if (e.code === "Escape") {
     toggleOpen();
   }
-} // срабатывает через раз СПРОСИТЬ У ЮРЫ!!!
+} // срабатывает через раз в Сафари СПРОСИТЬ У ЮРЫ!!!
+// e.preventDefault(); НЕ РАБОТАЕТ
