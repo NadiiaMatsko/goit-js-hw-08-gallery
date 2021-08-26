@@ -72,11 +72,9 @@ const refs = {
   closeBtnoverlay: document.querySelector(".lightbox__overlay"),
 };
 
-function markup(items) {
-  return items
-    .map(
-      ({ preview, original, description }) =>
-        `<li class="gallery__item">
+const galleryMarkup = galleryItems
+  .map(({ preview, original, description }) => {
+    return `<li class="gallery__item">
   <a
     class="gallery__link"
     href="${original}"
@@ -88,11 +86,10 @@ function markup(items) {
       alt="${description}"
     />
   </a>
-</li>`
-    )
-    .join("");
-}
-const galleryMarkup = markup(galleryItems);
+</li>`;
+  })
+  .join("");
+
 refs.gallery.insertAdjacentHTML("beforeend", galleryMarkup);
 
 refs.gallery.addEventListener("click", onGalleryClick);
